@@ -1,3 +1,14 @@
+'''
+13/07/2023
+Shugsy
+
+Just a rough n ready script to analyse NCEI format .txt data files.
+Source data: https://www.ncei.noaa.gov/pub/data/uscrn/products/monthly01/
+
+Have fun!
+
+'''
+
 ###### Imports
 import numpy as np
 import matplotlib.pyplot as plt
@@ -79,11 +90,8 @@ fig, ax = plt.subplots(ncols = 2, nrows = 2)
 for i in range(len(names)):
     for j in range(len(names[i])):
         name = names[i][j]
-        
-        
-        
+    
         x, y_avg, x_2023, y_2023, min_year = process(name)
-        
         
         name_proc = name.split(".")[0].split("-")[1] + " " + min_year + " to 2023"
         
